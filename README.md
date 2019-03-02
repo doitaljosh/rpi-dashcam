@@ -23,7 +23,8 @@ pip install mpu6050-raspberrypi python-apds9960 bme280 gps numpy picamera config
 - MPU6050 (i2c 6-axis gyroscope, accelerometer)
 
 Additional sensors can be added by adapting to the new libraries and their calling methods.
-To enable sensors, change the ```False``` values in ```config.ini``` under ```Sensors/Peripherals``` to ```True```
-Any UART GPS receiver should work, preferably UBlox devices.
+To enable sensors, change the ```False``` values in ```config.ini``` under ```Sensors/Peripherals``` to ```True```.
+
+##### Any UART GPS receiver should work, preferably UBlox devices.
 
 ### Copy the ```gpsd``` file to ```/etc/default/``` to configure gpsd.
