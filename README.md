@@ -1,6 +1,6 @@
 # Raspberry Pi Dashcam Proof of Concept
 
-###This is a very initial proof of concept with many bugs that need to be worked out and optimized.
+### This is a very initial proof of concept with many bugs that need to be worked out and optimized.
 
 ## Install Dependencies:
 ```
