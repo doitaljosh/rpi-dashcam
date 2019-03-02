@@ -57,7 +57,7 @@ with picamera.PiCamera() as camera:
       gpsp = GpsPoller()
 
    # Start recording
-   camera.start_recording('/home/pi/Videos/VID_' + dtfilestamp + '.h264', bitrate=VIDEO_BITRATE)
+   camera.start_recording(recPath + '/VID_' + dtfilestamp + '.h264', bitrate=VIDEO_BITRATE)
    isCameraRecording = True
    logger.info('Started recording')
 

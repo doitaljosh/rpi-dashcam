@@ -38,6 +38,7 @@ VIDEO_WIDTH = int(cfg.get('Camera', 'Width'))
 VIDEO_FPS = int(cfg.get('Camera', 'Framerate'))
 VIDEO_BITRATE = int(cfg.get('Camera', 'Bitrate'))
 VIDEO_INTERVAL = int(cfg.get('Camera', 'Interval'))
+recPath = str(cfg.get('Camera', 'Path'))
 
 # Display settings
 canvasHeight = int(cfg.get('HUD', 'CanvasHeight'))
