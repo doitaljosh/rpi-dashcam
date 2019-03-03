@@ -16,6 +16,8 @@ import subprocess
 import threading
 from PIL import Image, ImageDraw, ImageFont
 
+# global gpsp
+
 # Create empty canvas layers to store text overlays
 txtCanvas = Image.new("RGB", (dispWidth, canvasHeight))
 drawTxt = txtCanvas.load()
@@ -151,9 +153,10 @@ with picamera.PiCamera() as camera:
             time.sleep(refreshInterval)
 
    except KeyboardInterrupt:
-      gpsp.running = False
-      logger.info('Stopping GPS thread')
-      gpsp.join()
+      if isGpsEnabled:
+         gpsp.running = False
+         logger.info('Stopping GPS thread')
+         gpsp.join()
       camera.remove_overlay(topOverlay)
       camera.remove_overlay(btmOverlay)
       if isCameraRecording:
@@ -162,9 +165,10 @@ with picamera.PiCamera() as camera:
       logger.info('Exit')
 
    finally:
-      gpsp.running = False
-      logger.info('Stopping GPS thread')
-      gpsp.join()
+      if isGpsEnabled:
+         gpsp.running = False
+         logger.info('Stopping GPS thread')
+         gpsp.join()
       camera.remove_overlay(topOverlay)
       camera.remove_overlay(btmOverlay)
       if isCameraRecording:
