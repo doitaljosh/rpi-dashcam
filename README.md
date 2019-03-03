@@ -2,6 +2,23 @@
 
 ### This is a very initial proof of concept with many bugs that need to be worked out and optimized.
 
+## Features:
+- Camera streaming from Rapsberry Pi camera
+- HUD with live sensor and GPS data (temp, humidity, pressure, accelerometer, etc.)
+- Speedometer and trip counter
+- Configurable measuring units, HUD, and camera settings
+
+## To do:
+- Add accelerometer motion detection trigger for recording
+- Implement GPS auto-updating of time
+- Include overlay in recorded video
+- Auto convert raw H264 to mp4
+- Implement a HAL for compatibility with more sensors
+- Reverse camera function with lane markers
+- CAN bus monitoring support
+- Touch GUI for interaction
+- Much more
+
 ## Install Dependencies:
 ```
 sudo apt install python python-pil python-pip gpsd gpsd-clients
