@@ -68,7 +68,7 @@ isTftEnabled = cfg.getboolean('Sensors/Peripherals', 'SPITFT')
 gpsd = None
 initialLatitude = initialLongitude = 0
 initialStartupTime = ""
-timeActive = distanceTraveled = 0
+timeActive = distanceTraveled = sats = 0
 spd = alt = traveled = 0.0
 alsval = temp = hum = prs = 0
 xVal = yVal = zVal = 0
