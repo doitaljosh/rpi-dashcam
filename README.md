@@ -28,3 +28,6 @@ To enable sensors, change the ```False``` values in ```config.ini``` under ```Se
 ##### Any UART GPS receiver should work, preferably UBlox devices.
 
 ### Copy the ```gpsd``` file to ```/etc/default/``` to configure gpsd.
+
+## Run:
+```python main.py```
