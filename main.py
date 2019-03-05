@@ -59,9 +59,10 @@ with picamera.PiCamera() as camera:
       gpsp = GpsPoller()
 
    # Start recording
-   camera.start_recording(recPath + '/VID_' + dtfilestamp + '.h264', bitrate=VIDEO_BITRATE)
-   isCameraRecording = True
-   logger.info('Started recording')
+   if isRecordEnabled:
+      camera.start_recording(recPath + '/VID_' + dtfilestamp + '.h264', bitrate=VIDEO_BITRATE)
+      isCameraRecording = True
+      logger.info('Started recording')
 
    # Enable the light sensor
    if isAlsEnabled:
@@ -82,10 +83,6 @@ with picamera.PiCamera() as camera:
          logger.info('Started monitoring GPS')
 
       while True:
-          # Read GPS data
-          readLoc()
-          gpsd = gps(mode=1)
-
           if isCameraRecording == False:
             timeActive = "Off"
 
@@ -106,6 +103,8 @@ with picamera.PiCamera() as camera:
              zVal = accelData['z']
 
           if isGpsEnabled:
+             readLoc()
+             gpsd = gps(mode=1)
              distanceTraveled = distance((initialLatitude, initialLongitude), (gpsd.fix.latitude, gpsd.fix.longitude))
              lat = gpsd.fix.latitude
              lon = gpsd.fix.longitude
